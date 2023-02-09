@@ -16,9 +16,12 @@ console.log('Test - should say "Hello World!"');
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
   console.log('My name is ', name);
-  return;
+  let myName = name;
+  return myName;
 }
-helloName('Anthony');
+console.log('Hello', helloName( 'Anthony'));
+// With the argument 'name', I needed to input the name in single quotes for the return to actually show up on the console log.  
+
 // Remember to call the function to test
 
 
@@ -61,20 +64,27 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 //    array is empty, return `undefined`.
 
 function getLast( array ) {
-  console.log('Finding if getLast is false', array);
-  if ( 0 < array.length)
-    return 'Undefeined';
+  if (array.length > 0){
+    return array[array.length - 1];}
 
-  }
-  
+}
+console.log('My array', getLast([2, 3,4,5,6]));  
   
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
+  for(let i=0; i < array.length; i++){
+    if( array[i]===value){
+      return true;
+    }
+     
+  }
+  return false;
   
 }
+console.log('Test to return true', find(3,[1,2,4]))
 
 // ----------------------
 // Stretch Goals
