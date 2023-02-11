@@ -10,39 +10,38 @@ function hello() {
 }
 // Call the function to test
 console.log('Test - should say "Hello World!"');
+hello();
 
 
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  console.log('My name is ', name);
+  console.log('Hello, my name is:', name);
   let myName = name;
   return myName;
 }
-console.log('Hello', helloName( 'Anthony'));
 // With the argument 'name', I needed to input the name in single quotes for the return to actually show up on the console log.  
 
 // Remember to call the function to test
-
+helloName('anthony');
 
 // 3. Function to add two numbers together & return the result
 function addNumbers( firstNumber, secondNumber) {
 // return firstNumber + secondNumber;
-console.log('Two numbers together', firstNumber, secondNumber);
-
-let result = firstNumber + secondNumber;
-return result;
+ return console.log('The answer is', firstNumber + secondNumber);
 }
-console.log(addNumbers(2,3));
-
+addNumbers(2,3);
+addNumbers(9,9);
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree(num0, num1, num2 ){
   console.log('multipliers are', num0, num1, num2);
   let answer = num0 * num1 * num2;
-  return answer;
+  return console.log('The answer is:', answer);
 }
-console.log(multiplyThree(2,3,4));
+multiplyThree(4,5,2);
+multiplyThree(5,5,5);
+
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
@@ -66,7 +65,7 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 function getLast( array ) {
   console.log('in getLast function.');
      if (array.length > 0){
-  return array[array.length - 1];}
+  return array[array.length - 1]};
 }
 console.log('My array', getLast([2, 3,4,5,6]));  
   
@@ -92,7 +91,7 @@ console.log('Test to return true', find(3,[1,2,3,4]));
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
   console.log('in isFirstLetter function', letter, string);
-  
+   
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
@@ -103,7 +102,6 @@ function sumAll(array) {
     for(sum; sum < array.length; ++sum){
       sum += sumAll[sum];
     }
-    
   // TODO: loop to add items
   return sum;
 } console.log('Number 9 answer is:', sumAll([]));
